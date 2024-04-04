@@ -1,0 +1,101 @@
+*{
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+    background:linear-gradient(90deg, rgba(239,101,42,1) 27%, rgba(35,102,241,1) 54%, rgba(255,218,62,1) 73%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.letraGrande{ 
+    font-size: 30px;
+}
+
+.letraMediana{
+    font-size: 20px;
+}
+
+.centrar{
+    text-align: center;
+}
+
+#contenedorImagenes{
+    width: 100%;
+}
+
+.contenedorImagen{
+    display: inline;
+    width: 33%;
+}
+img{
+    width: 80%;
+}
+
+.float{
+    float: left;
+}
+
+.mtop{
+   margin-top: 10px;
+}
+
+.bloque{
+    display: block;
+}
+
+.col12{
+    width: 100%;
+}
+
+.col9{
+    width: 75%;
+}
+
+.col6{
+    width: 50%;
+}
+
+.col3{
+    width: 25%;
+}
+
+.centrarDiv{
+    display: flex;
+    justify-content: center;
+}
+
+#imgDatos{
+    width: 50%;
+}
+
+#parrafoDescripcion{
+    padding: 10px;
+    background-color: #eee;
+    border-radius: 50px;
+}
+
+.footer{
+    background-color: #ddd;
+    height: 50px;
+}
+
+
+
+
+@media screen and (max-width: 600px){
+    .contenedorImagen{
+        display: block;
+        float: none;
+        width: 100%;
+    }
+
+    #parrafoDescripcion{
+        width: 90%;
+    }
+
+    #imgDatos{
+        width: 100%;
+    }
+}
