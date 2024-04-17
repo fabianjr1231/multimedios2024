@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="shortcut icon" href="img/logo.png" />
+</head>
+
+<body>
+    <div class="container-fluid bg-light">
+        <header class="container-fluid">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="Index.html"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                            <li class="nav-item ms-5">
+                                <a class="nav-link " aria-current="page" href="Index.html">Inicio</a>
+                            </li>
+
+                            <li class="nav-item ms-5">
+                                <a class="nav-link active" aria-current="page" href="productos.html">Productos</a>
+                            </li>
+
+                            <li class="nav-item ms-5">
+                                <a class="nav-link" href="sobreNosotros.html">Sobre nosotros</a>
+                            </li>
+
+                            <li class="nav-item ms-5">
+                                <a class="nav-link" href="contacto.html">Contacto</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <main>
+        <!--HORIZONTAL es usado para dispositivos pequeños-->
+        <div class="container-fluid pills">
+            <ul class="nav nav-pills mb-3 bg-light" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="v-pills-productos-tab" data-bs-toggle="pill" data-bs-target="#v-pills-productos" type="button" role="tab" aria-controls="v-pills-productos" aria-selected="true">Productos</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="v-pills-Mac-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Mac" type="button" role="tab" aria-controls="v-pills-Mac" aria-selected="false">Mac</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="v-pills-iphone-tab" data-bs-toggle="pill" data-bs-target="#v-pills-iphone" type="button" role="tab" aria-controls="v-pills-iphone" aria-selected="false">Iphone</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="v-pills-airpods-tab" data-bs-toggle="pill" data-bs-target="#v-pills-airpods" type="button" role="tab" aria-controls="v-pills-airpods" aria-selected="false">Airpods</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="v-pills-ipads-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ipads" type="button" role="tab" aria-controls="v-pills-ipads" aria-selected="false">Airpods</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="v-pills-watch-tab" data-bs-toggle="pill" data-bs-target="#v-pills-watch" type="button" role="tab" aria-controls="v-pills-watch" aria-selected="false">Airpods</button>
+                  </li>
+              </ul>
+        </div>
+        <!--menu vertical de productos-->
+        <div class="d-flex align-items-start">
+            <!--VERTICAL-->
+            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <!--Boton de Mac, contiene vista principal productos-->
+                <button class="nav-link active" id="v-pills-productos-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-productos" type="button" role="tab" aria-controls="v-pills-productos"
+                    aria-selected="true">
+                    <img src="img/Productos/macs.png " class="img-fluid imgMenu" alt=""> <br>
+                    Productos
+                </button>
+
+                <!--Boton de Mac, contiene comoutadoras-->
+                <button class="nav-link " id="v-pills-Mac-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Mac"
+                    type="button" role="tab" aria-controls="v-pills-Mac" aria-selected="false">
+                    <img src="img/mac.png " class="img-fluid imgMenu" alt=""> <br>
+                    Mac
+                </button>
+
+                <!--Boton de iphones, contiene telefonos celulares-->
+                <button class="nav-link" id="v-pills-iphone-tab" data-bs-toggle="pill" data-bs-target="#v-pills-iphone"
+                    type="button" role="tab" aria-controls="v-pills-iphone" aria-selected="false">
+                    <img src="img/iphones.png" class="img-fluid imgMenu" alt=""> <br>
+                    Iphone
+                </button>
+
+                <!--Boton de airpods, contiene audifonos-->
+                <button class="nav-link" id="v-pills-airpods-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-airpods" type="button" role="tab" aria-controls="v-pills-airpods"
+                    aria-selected="false">
+                    <img src="img/airpods pro.png" class="img-fluid imgMenu" alt=""> <br>
+                    Airpods
+                </button>
+
+                <!--Boton de ipad, coniene talets-->
+                <button class="nav-link" id="v-pills-ipads-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ipads"
+                    type="button" role="tab" aria-controls="v-pills-ipads" aria-selected="false">
+                    <img src="img/ipad.png" class="img-fluid imgMenu" alt=""> <br>
+                    Ipad
+                </button>
+
+                <!--Boton de watch, contiene relojes-->
+                <button class="nav-link" id="v-pills-watch-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-watch" type="button" role="tab" aria-controls="v-pills-watch"
+                    aria-selected="false">
+                    <img src="img/watchs.png" class="img-fluid imgMenu" alt=""> <br>
+                    Watch
+                </button>
+            </div>
+
+            <!-------------------------------------------------------------------------------------------------------------->
+            <!--DIVS EN LOS CUALES SE CARGA LA INFORMACIÓN DE CADA UNO DE LOS RESPECTIVOS MENUS-->
+
+            <div class="tab-content container-fluid" id="v-pills-tabContent">
+
+                <!--Div de productos-->
+                <div class="tab-pane fade show active container-fluid" id="v-pills-productos" role="tabpanel"
+                    aria-labelledby="v-pills-productos-tab" tabindex="0">
+                    <div class="">
+                        <div class="text-center mt-5">
+                            <h1 class="gradient">El mejor lugar para comprar los productos que amas</h1>
+                        </div>
+                        <div class="container-fluid d-flex justify-content-center">
+                            <img src="img/Productos/productos.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    
+
+                </div>
+
+                <!--Div de mac-->
+                <div class="tab-pane fade " id="v-pills-Mac" role="tabpanel" aria-labelledby="v-pills-Mac-tab"
+                    tabindex="100">
+
+                    <!--Macbook air 13 pulgadas-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/Productos/macbook-air-13.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Macbook Air M3 </h5>
+                            <p class="card-text">Patalla 13 pulgadas <br>8-Core CPU <br> 8-Core GPU <br> 8GB Unified
+                                Memory <br> 256GB SSD Storage <br> <strong class="fs-4">$1,099.00</strong></p>
+                            <a href="https://www.apple.com/shop/buy-mac/macbook-air/13-inch-midnight-apple-m3-chip-with-8-core-cpu-and-8-core-gpu-8gb-memory-256gb"
+                                class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+                    <!--Macbook air 15 pulgadas-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/Productos/macbook-air-15.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Macbook Air M3 </h5>
+                            <p class="card-text">Patalla 15 pulgadas <br>8-Core CPU <br> 8-Core GPU <br> 8GB Unified
+                                Memory <br> 256GB SSD Storage <br> <strong class="fs-4">$1,299.00</strong>
+                            </p>
+                            <a href="https://www.apple.com/shop/buy-mac/macbook-air/15-inch-midnight-apple-m3-chip-with-8-core-cpu-and-10-core-gpu-8gb-memory-256gb"
+                                class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+
+                    <!--Macbook pro 14 pulgadas-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/Productos/macbook-pro-14.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Macbook Pro M3 </h5>
+                            <p class="card-text">Patalla 14 pulgadas <br>8-Core CPU <br> 10-Core GPU <br> 8GB
+                                Unified
+                                Memory <br> 512GB SSD Storage <br> <strong class="fs-4">$1,599.00</strong>
+                            </p>
+                            <a href="https://www.apple.com/shop/buy-mac/macbook-pro/14-inch-space-gray-apple-m3-chip-with-8-core-cpu-and-10-core-gpu-8gb-memory-512gb"
+                                class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+
+                    <!--Macbook pro 15 pulgadas-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/Productos/macbook-pro-16-png.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Macbook Pro M3 </h5>
+                            <p class="card-text">Patalla 16 pulgadas <br>12-Core CPU <br> 18-Core GPU <br> 18GB
+                                Unified
+                                Memory <br> 512GB SSD Storage <br> <strong class="fs-4">$2,499.00</strong>
+                            </p>
+                            <a href="https://www.apple.com/shop/buy-mac/macbook-pro/16-inch-space-black-apple-m3-pro-with-12-core-cpu-and-18-core-gpu-18gb-memory-512gb"
+                                class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+
+                    <!--Mac mini-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/Productos/mac-mini.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Macbook Mini M2 </h5>
+                            <p class="card-text">8-Core CPU <br> 10-Core GPU <br> 8GB Unified
+                                Memory <br> 256GB SSD Storage <br> <br> <strong class="fs-4">$599.00</strong>
+                            </p>
+                            <a href="https://www.apple.com/shop/buy-mac/mac-mini/apple-m2-chip-with-8-core-cpu-and-10-core-gpu-256gb"
+                                class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+
+                    <!--Imac verde-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/Productos/imac-green.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Imac M3</h5>
+                            <p class="card-text">Pantalla de 24 pulgadas 4K <br>8-Core CPU <br> 8-Core GPU <br> 8GB
+                                Unified
+                                Memory <br> 256GB SSD Storage <br> <strong class="fs-4">$1,299.00</strong>
+                            </p>
+                            <a href="https://www.apple.com/shop/buy-mac/imac/green-24-inch-apple-m3-chip-with-8-core-cpu-and-8-core-gpu-8gb-memory-256gb"
+                                class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+
+                    <!--Imac amarillo-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/Productos/imac-yellow.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Imac M3</h5>
+                            <p class="card-text">Pantalla de 24 pulgadas 4K <br>8-Core CPU <br> 10-Core GPU <br> 8GB
+                                Unified
+                                Memory <br> 512GB SSD Storage <br> <strong class="fs-4">$1,699.00</strong>
+                            </p>
+                            <a href="https://www.apple.com/shop/buy-mac/imac/yellow-24-inch-apple-m3-chip-with-8-core-cpu-and-10-core-gpu-8gb-memory-512gb"
+                                class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+
+                    <!--Mac Studio-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/Productos/mac-studio.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Mac Studio M2 ULTRA</h5>
+                            <p class="card-text">Pantalla de 24 pulgadas 4K <br>24-Core CPU <br> 60-Core GPU <br>
+                                64GB Unified
+                                Memory <br> 1TB SSD Storage <br> <strong class="fs-4">$3,999.00</strong>
+                            </p>
+                            <a href="https://www.apple.com/shop/buy-mac/mac-studio/24-core-cpu-60-core-gpu-32-core-neural-engine-64gb-memory-1tb"
+                                class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Div de los iphone-->
+                <div class="tab-pane fade" id="v-pills-iphone" role="tabpanel" aria-labelledby="v-pills-iphone-tab"
+                    tabindex="0">
+
+                    <!--iphone 13-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/iphone/iphone13.png" class="card-img-top img-iphone" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Iphone 13</h5>
+                            <p class="card-text">Pantalla de 6,1 pulgadas <br> 128 GB <br> <strong
+                                    class="fs-4">$599.00</strong>
+                            </p>
+                            <a href="https://www.apple.com/shop/buy-iphone/iphone-13"
+                                class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+
+                    <!--iphone 14-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/iphone/iphone14.png" class="card-img-top img-iphone" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Iphone 14</h5>
+                            <p class="card-text">Pantalla de 6,1 pulgadas <br> 128 GB <br> <strong
+                                    class="fs-4">$699.00</strong>
+                            </p>
+                            <a href="https://www.apple.com/shop/buy-iphone/iphone-14"
+                                class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+
+                    <!--iphone 15-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/iphone/iphone15.png" class="card-img-top img-iphone" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Iphone 15</h5>
+                            <p class="card-text">Pantalla de 6,1 pulgadas <br> 128 GB <br> <strong
+                                    class="fs-4">$799.00</strong>
+                            </p>
+                            <a href="https://www.apple.com/shop/buy-iphone/iphone-15"
+                                class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+
+                    <!--iphone 15 plus-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/iphone/iphone15plus.png" class="card-img-top img-iphone" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Iphone 15 Plus</h5>
+                            <p class="card-text">Pantalla de 6,7 pulgadas <br> 128 GB <br> <strong
+                                    class="fs-4">$899.00</strong>
+                            </p>
+                            <a href="https://www.apple.com/shop/buy-iphone/iphone-15"
+                                class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+
+                    <!--iphone 15 pro-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/iphone/iphone15-pro.png" class="card-img-top img-iphone" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Iphone 15 Pro</h5>
+                            <p class="card-text">Pantalla de 6,1 pulgadas <br> 128 GB <br> <strong
+                                    class="fs-4">$999.00</strong>
+                            </p>
+                            <a href="https://www.apple.com/shop/buy-iphone/iphone-15-pro"
+                                class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+
+                    <!--iphone 15 pro max-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/iphone/iphone15-pro-max.png" class="card-img-top img-iphone" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Iphone 15 Pro Max</h5>
+                            <p class="card-text">Pantalla de 6,7 pulgadas <br> 256 GB <br> <strong
+                                    class="fs-4">$1,199.00</strong>
+                            </p>
+                            <a href="https://www.apple.com/shop/buy-iphone/iphone-15-pro"
+                                class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Div de los airpods-->
+                <div class="tab-pane fade" id="v-pills-airpods" role="tabpanel" aria-labelledby="v-pills-airpods-tab"
+                    tabindex="0">
+
+                    <!--airpods-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/airpods/airpods.png" class="card-img-top img-iphone" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">AirPods 3rd Generación</h5>
+                            <p class="card-text">Cargador MagSafe <br> <strong class="fs-4">$179.00</strong>
+                            </p>
+                            <a href="https://www.apple.com/shop/product/MME73AM/A/airpods-3rd-generation-with-magsafe-charging-case"
+                                class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+
+                    <!--airpods pro-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/airpods/airpods-pro.png" class="card-img-top img-iphone" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">AirPods Pro 2da Generación</h5>
+                            <p class="card-text">Cargador MagSafe <br> <strong class="fs-4">$249.00</strong>
+                            </p>
+                            <a href="https://www.apple.com/shop/product/MTJV3AM/A/airpods-pro"
+                                class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+
+                    <!--airpods max-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/airpods/airpods-max.png" class="card-img-top img-iphone" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">AirPods Max</h5>
+                            <p class="card-text">Free Engraving <br> <strong class="fs-4">$549.00</strong>
+                            </p>
+                            <a href="https://www.apple.com/shop/product/MTJV3AM/A/airpods-pro"
+                                class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Div de los ipads-->
+                <div class="tab-pane fade" id="v-pills-ipads" role="tabpanel" aria-labelledby="v-pills-ipads-tab"
+                    tabindex="0">
+                    <!--ipad air-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/ipad/ipad-air.png" class="card-img-top img-iphone" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Ipad Air</h5>
+                            <p class="card-text">Pantalla de 10.9 pulgadas <br> 64 GB <br> <strong
+                                    class="fs-4">$599.00</strong>
+                            </p>
+                            <a href="https://www.apple.com/shop/buy-ipad/ipad-air" class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+
+                    <!--ipad pro-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/ipad/ipad-pro.png" class="card-img-top img-iphone" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Ipad Pro</h5>
+                            <p class="card-text">Pantalla de 12.9 pulgadas <br> 128 GB <br> <strong
+                                    class="fs-4">$1,099.00</strong>
+                            </p>
+                            <a href="https://www.apple.com/shop/buy-ipad/ipad-pro/12.9-inch-display-128gb-space-gray-wifi"
+                                class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Div de los watch-->
+                <div class="tab-pane fade" id="v-pills-watch" role="tabpanel" aria-labelledby="v-pills-watch-tab"
+                    tabindex="0">
+                    <!--Apple Watch SE-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/Watch/watch-se.png" class="card-img-top img-iphone" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Apple Watch SE</h5>
+                            <p class="card-text">44mm <br> GPS <br> <strong
+                                    class="fs-4">$279.00</strong>
+                            </p>
+                            <a href="https://www.apple.com/shop/buy-watch/apple-watch-se?option.watch_cases=MRTX3LL%2FA&option.watch_bands=MWF93AM%2FA&product=Z0YQ&step=select" class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+
+                    <!--Apple Watch Series 9-->
+                    <div class="card float-start m-3" style="width: 18rem;">
+                        <img src="img/Watch/watch-series-9.png" class="card-img-top img-iphone" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Apple Watch Series 9</h5>
+                            <p class="card-text">45mm <br> GPS + Celular <br> <strong
+                                    class="fs-4">$529.00</strong>
+                            </p>
+                            <a href="https://www.apple.com/shop/buy-watch/apple-watch?option.watch_cases=MRQH3LW%2FA&option.watch_bands=MTF33AM%2FA&product=Z0YQ&step=select"
+                                class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--Cierre del menu dentro del main-->
+    </main>
+
+    <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-secondary text-white-50">
+        <div class="container text-center">
+          <small>Copyright &copy; apple</small>
+        </div>
+      </footer>
+</body>
+
+</html>

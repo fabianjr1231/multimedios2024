@@ -1,0 +1,105 @@
+.carouselImg {
+    width: 350px;
+    height: 400px;
+}
+
+.imgMenu {
+    width: 100px;
+}
+
+.img-iphone {
+    height: 350px;
+}
+
+.gradient {
+    background: -webkit-linear-gradient(286deg, rgba(42,239,235,1) 21%, rgba(35,102,241,1) 48%, rgba(254,62,255,1) 73%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient2{
+    background: -webkit-linear-gradient(74deg, rgba(3,208,1,1) 21%, rgba(35,102,241,1) 48%, rgba(255,164,62,1) 73%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fondo{
+    background-color: #eee;
+    height: 1100px;    
+}
+
+.cont-info{
+    background-color: #ffffff;
+    width: 90%;
+    height: 320px;
+}
+
+.img-sobre-nosotros{
+    width: 400px;
+    height: 337px;
+}
+
+.titulo-img-sobre-nosotros{
+    width: 400px;
+    height: 90px;
+}
+
+.roundtop{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.roundbottom{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+
+
+
+
+@media screen and (min-width: 992px) {
+    header {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .pills{
+        display: inline;
+        position: sticky;
+        top: -23px;
+        z-index: 10000;
+    }
+
+    #v-pills-tab{
+        display: none;
+    }
+    .cont-info{
+        height: 1200px;
+    }
+    .fondo{
+        height: 2500px;    
+    }
+
+}
+
+@media screen and (min-width: 500px){
+    .pills{
+        display: none;
+    }
+
+    #v-pills-tab{
+        display: block;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 1200px){
+    .cont-info{
+        height: 800px;
+    }
+}
+
+
