@@ -1,0 +1,36 @@
+<script>
+
+    const personas = {
+        nombre : "Mario",
+        apellido : "Jimenez",
+        provincia : "Puntarenas",
+        casado : true,
+        funcnombrecompleto : function (){
+            return this.nombre + ' ' + this.apellido;
+        }
+
+    }
+
+    console.log(personas);
+    console.log(personas.nombre);
+    console.log(personas["apellido"]);
+    console.log(personas.funcnombrecompleto)
+
+    let test = {
+        "id":"489",
+        "name":"Prueba",
+        "email":"correoprueba@gmail.com",
+        "password":"36942f29312e95ad81c8619d8bceaf33"
+    };
+
+
+    var text = '{ "employees" : [' +
+'{ "firstName":"John" , "lastName":"Doe" },' +
+'{ "firstName":"Anna" , "lastName":"Smith" },' +
+'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+
+console.log(text);
+console.log(JSON.parse(text));
+
+
+</script>

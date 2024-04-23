@@ -16,32 +16,33 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+
+        <script>
+            //logica de programacion
+        //    document.getElementById("texto").innerHTML = "Bienvenidos JS";
+        </script>
+
     </head>
-    <script>
-        function suma(a = 0, b = 0){
-            a = document.getElementById("dato1").value;
-            b = document.getElementById("dato2").value;
 
-            let resultado =parseInt(a) + parseInt(b) ;
-
-            document.getElementById("resultado").innerHTML = resultado;
-        //alert("resultado"); muestra una ventana emergente
-    }
-    </script>
     <body>
-
-<div
-    class="container-fluid"
->
-    <header>
-        <!-- place navbar here -->
-    </header>
-    <main>
-        <div
-            class="container"
-        >
+    <div
+        class="container"
+    >
+        <header>
+            <!-- place navbar here -->
+            <h1>Calculadora</h1>
+        </header>
+        <main>
             <div
-                class="row justify-content-center align-items-center g-2"
+                class="container"
+            >
+                <p id="texto">
+
+                </p>
+
+
+            <div
+                class="row"
             >
                 <div class="col">
                     <div class="mb-3">
@@ -52,9 +53,9 @@
                             name=""
                             id="dato1"
                             aria-describedby="helpId"
-                            placeholder="Ingrese su numero"
+                            placeholder="Ingrese un numero"
                         />
-                        <small id="helpId" class="form-text text-muted">Ingrese su numero</small>
+                        <small id="helpId" class="form-text text-muted">Dato 1</small>
                     </div>
                     
                 </div>
@@ -67,14 +68,16 @@
                             name=""
                             id="dato2"
                             aria-describedby="helpId"
-                            placeholder="Ingrese su numero"
+                            placeholder="Ingrese un numero"
                         />
-                        <small id="helpId" class="form-text text-muted">Ingrese su numero</small>
-                    </div>                    
+                        <small id="helpId" class="form-text text-muted">Dato 2</small>
+                    </div>
+
+
                 </div>
                 <div class="col">
                     <div
-                        class="row "
+                        class="row justify-content-center align-items-center g-2"
                     >
                         <div class="col">
                             <a
@@ -91,50 +94,71 @@
                             <a
                                 name=""
                                 id=""
-                                class="btn btn-info"
-                                
+                                class="btn btn-warning "
+                                href="#"
                                 role="button"
-                                >Dividir</a
-                            >                            
+                                >Restar</a
+                            >
+                            
                         </div>
                         <div class="col">
                             <a
                                 name=""
                                 id=""
                                 class="btn btn-danger"
-                                
+                                href="#"
                                 role="button"
-                                >Restar</a
-                            >                            
+                                >Dividir</a
+                            >
+                            
                         </div>
                         <div class="col">
                             <a
                                 name=""
                                 id=""
-                                class="btn btn-warning"
-                                
+                                class="btn btn-success "
+                                href=""
                                 role="button"
                                 >Multiplicar</a
                             >                            
                         </div>
+                        <div
+                            class="col"
+                        >
+                            <a
+                                name=""
+                                id=""
+                                class="btn btn-info"
+                                href="#"
+                                role="button"
+                                >Cual es Mayor y menor</a
+                            >
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col">
+                    <div
+                        class="row"
+                    >
+                        <div class="col">Resultado</div>
+                        <div class="col">
+                            <span id="resultado"></span>
+                        </div>
                     </div>
                     
                 </div>
-                <div class="col">
-                    <span id="resultado">resultado</span>
-                </div>
             </div>
             
-        </div>
-        
-        
-    </main>
-    <footer>
-        <!-- place footer here -->
-    </footer>
-</div>
 
-
+            </div>
+            
+        </main>
+        <footer>
+            <!-- place footer here -->
+        </footer>
+    </div>
 
         <!-- Bootstrap JavaScript Libraries -->
         <script
@@ -148,5 +172,18 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
+
+        <script>
+            function suma(a = 0, b = 0){
+                alert("Sumando");
+                a = document.getElementById("dato1").value;
+                b = document.getElementById("dato2").value;
+
+                let resultado = parseInt(a) + parseInt(b);
+                document.getElementById("resultado").innerHTML = resultado;
+            }
+
+        </script>
+
     </body>
 </html>
