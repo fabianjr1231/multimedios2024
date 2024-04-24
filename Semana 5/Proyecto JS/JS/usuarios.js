@@ -1,21 +1,137 @@
-let datosTabla = document.querySelector("#datos");
+//PROPIEDADES INICIO
+let datosTabla = document.querySelector("#datos"); //cuando es querySelector requiere el numeral.
+let mensajesSistema = document.querySelector("#mensajesSistema"); //obtiene id del div para dibujar el alert de crear
+let formulario = document.getElementById("formulario"); //cuando es getElementById, no requiere el numeral.
+let formularioEditar = document.getElementById("formularioEditar"); //cuando es getElementById, no requiere el numeral.
+
+let nombrePagina = document.title;
+let nombreModuloLista = "Usuarios";
+let nombreModuloCrear = "Crear usuarios";
+
+//URLS API
 let url = "https://paginas-web-cr.com/Api/apis/";
 let listar = "ListaUsuarios.php";
+let insertar = "InsertarUsuarios.php";
+let actualizar = "ActualizarUsuarios.php";
 
+//MISC
 let spinner = `
 <button class="btn btn-success" type="button" disabled>
 <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
 <span role="status">Cargando...</span>
-</button>
-`;
+</button>`;
 
+//PROPIEDADES FIN
+
+//EVENTOS INICIO
+
+if (nombrePagina == nombreModuloCrear){
+    formulario.addEventListener('submit',
+    function (evento){
+        evento.preventDefault(); //cancela que la página se recargue 
+
+        let datos = new FormData(formulario);
+
+        let datosEnviar = {
+            name: datos.get('name'),
+            email: datos.get('email'),
+            password: datos.get('password')
+        }
+
+        fetch (url + insertar,
+            {
+                method: 'POST',
+                body: JSON.stringify(datosEnviar)
+            }
+        )
+        .then(respuesta=> respuesta.json())
+        .then((datosRespuesta) =>{
+            memsajeInsertar(datosRespuesta);
+        })
+        .catch(console.log)
+
+    })
+}
+
+formularioEditar.addEventListener('submit', 
+function(evento) {
+    evento.preventDefault();//evita que la pagina se recargue
+    
+    let datos = new FormData(formularioEditar);
+
+    let datosEnviar = {
+        name: datos.get('name'),
+        password: datos.get('password'),        
+        id: datos.get('id')
+    }
+    console.log(datosEnviar);
+
+        //url + insertar esto es la url del servicio concatenada
+        fetch( url + actualizar,
+            {
+                method: 'POST',
+                body: JSON.stringify(datosEnviar)
+            } 
+        )
+        .then(respuesta=>respuesta.json())
+        .then( (datosrepuesta) => {
+            mensajeActualizar(datosrepuesta)
+        })
+        .catch(console.log)
+
+ 
+})
+
+
+//EVENTOS FIN
+
+//MÉTODOS INICIO
+function memsajeInsertar(datos){
+    if(datos.code == 200){
+        mensajesSistema.innerHTML = `
+        <div class="alert alert-success alert-dimissible fade show" role = "alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+            <strong>Ingreso exitoso</strong>
+        </div>
+        `
+    }
+    else{
+        mensajesSistema.innerHTML = `
+        <div class="alert alert-warning alert-dimissible fade show" role = "alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+            <strong>El correo ingresado ya ha sido utilizado</strong>
+        </div>
+        `
+    }
+}
+
+function mensajeActualizar(datos){
+    if(datos.code == 200){
+        mensajesSistema.innerHTML = `
+        <div class="alert alert-success alert-dimissible fade show" role = "alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+            <strong>Actualización exitosa</strong>
+        </div>`;
+        setTimeout(cargarDatos, 1000); 
+        setInterval(` document.getElementById("modalEditar").remove()`,1000);
+        setInterval("location.reload()",2000); 
+    }
+    else{
+        mensajesSistema.innerHTML = `
+        <div class="alert alert-warning alert-dimissible fade show" role = "alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+            <strong>Error al actualizar</strong>
+        </div>`;
+    }
+}
 
 function cargarDatos() {
+    datosTabla.innerHTML = "";
     loadSpinner();
+
     fetch(url + listar)
         .then(respuesta => respuesta.json())
         .then((datosRespuesta) => {
-            //console.log(datosRespuesta)
             mostrarDatos(datosRespuesta)
         })
         .catch(console.log)
@@ -39,10 +155,12 @@ function mostrarDatos(datos) {
                 <a
                     name=""
                     id=""
-                    class="btn btn-danger"                        
+                    class="btn btn-danger"   
                     role="button"
+                    onclick="eliminar('${iterator.id}')"
                     ><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-eraser"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19 20h-10.5l-4.21 -4.3a1 1 0 0 1 0 -1.41l10 -10a1 1 0 0 1 1.41 0l5 5a1 1 0 0 1 0 1.41l-9.2 9.3" /><path d="M18 13.3l-6.3 -6.3" /></svg></a
-                ></td>
+                > 
+                </td>
                     <td>${iterator.id}</td>
                     <td>${iterator.name}</td>
                     <td>${iterator.email}</td>
@@ -62,4 +180,35 @@ function loadSpinner() {
     document.getElementById("spinnerLoad").innerHTML = spinner;
 }
 
-cargarDatos();
+function editar(objeto) {
+    let modalEditar = new bootstrap.Modal(document.getElementById("modalEditar"));
+    modalEditar.show();
+
+    
+    objeto = JSON.parse(decodeURIComponent(objeto));
+    
+    document.getElementById("id").value = objeto.id;
+    document.getElementById("name").value = objeto.name;
+    document.getElementById("email").value = objeto.email;
+    document.getElementById("password").value = "";
+    document.getElementById("ideditar").innerHTML = objeto.id;
+
+
+}
+
+function eliminar(id){
+    document.getElementById("idEliminar").innerHTML = id;
+    document.getElementById("idEliminarModal").value = id;
+    
+    let modalEliminar = new bootstrap.Modal(document.getElementById("modalEliminar"));
+    modalEliminar.show();
+}
+
+function modalEliminarConfirmacion(){
+    //document.getElementById("idEliminarModal").value
+}
+
+//METODOS FIN
+if (nombrePagina == nombreModuloLista){
+    cargarDatos();
+}
