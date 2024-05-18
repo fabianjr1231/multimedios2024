@@ -1,0 +1,10 @@
+.degradado{
+    background: rgb(255,164,62);
+    background: linear-gradient(74deg, rgba(255,164,62,1) 42%, rgba(203,241,35,1) 93%);
+}
+
+.cont{
+    height: 100vh;
+    display: flex;
+   align-items: center;
+}
