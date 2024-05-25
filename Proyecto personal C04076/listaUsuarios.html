@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursos</title>
+    <title>Usuarios</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -27,7 +27,7 @@
     <main>
         <div class="container-fluid min-vh-100">
             <div class="table-responsive">
-                <h1 class="text-center">Lista de cursos</h1>
+                <h1 class="text-center">Lista de usuarios</h1>
 
                 <div id="mensajesSistema"></div>     
 
@@ -35,15 +35,14 @@
 
             </div>
 
-            <table class="table table-info">
+            <table class="table table-info table-responsive">
                 <thead>
                     <tr>
                         <th>Acciones</th>
                         <th>ID</th>
                         <th>Nombre</th>
-                        <th>Descripción</th>
-                        <th>Tiempo</th>
-                        <th>Usuario</th>
+                        <th>Email</th>
+                        <th>Contraseña</th>
                     </tr>
                 </thead>
                 <tbody id="datos">
@@ -77,37 +76,28 @@
                         <div class="mb-3">
                             <label for="" class="form-label">Id</label>
                             <input type="text" class="form-control" name="id" id="id" aria-describedby="helpId"
-                                placeholder="" readonly />
+                                placeholder="" hidden />
+                            <span id="ideditar"></span>
                         </div>
 
                         <div class="mb-3">
                             <label for="" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId"
+                            <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId"
                                 placeholder="Ingrese su nombre" required />
                             <small id="helpId" class="form-text text-muted">Digita tu nombre</small>
                         </div>
-
                         <div class="mb-3">
-                            <label for="" class="form-label">Descripción</label>
-                            <input type="text" class="form-control" name="descripcion" id="descripcion" aria-describedby="helpId"
-                                placeholder="Ingrese su nombre" required />
-                            <small id="helpId" class="form-text text-muted">Digita la descripción del curso</small>
+                            <label for="" class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email" id="email" aria-describedby="helpId"
+                                placeholder="Ingrese su correo" disabled />
+                            <small id="helpId" class="form-text text-muted">Digita tu Email</small>
                         </div>
-
                         <div class="mb-3">
-                            <label for="" class="form-label">Duración</label>
-                            <input type="text" class="form-control" name="tiempo" id="tiempo" aria-describedby="helpId"
-                                placeholder="Ingrese su nombre" required />
-                            <small id="helpId" class="form-text text-muted">Digita la duración del curso</small>
+                            <label for="" class="form-label">Password</label>
+                            <input type="text" class="form-control" name="password" id="password"
+                                aria-describedby="helpId" placeholder="Ingrese su password" required />
+                            <small id="helpId" class="form-text text-muted">Digita tu password</small>
                         </div>
-
-                        <div class="mb-3">
-                            <label for="" class="form-label">Usuario</label>
-                            <input type="text" class="form-control" name="usuario" id="usuario" aria-describedby="helpId"
-                                placeholder="Ingrese su nombre" required />
-                            <small id="helpId" class="form-text text-muted">Digita el usuario que va a impartir el curso</small>
-                        </div>
-
                         <div class="mb-3 ">
                             <button type="submit" class="btn btn-primary">
                                 Guardar
@@ -139,18 +129,15 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="formEliminar" >
-                        Usted va a a eliminar el curso <span id="nombreCursoEliminar"></span>
-                        <input type="text" class="form-control" name="idEliminarModal" id="idEliminarModal" aria-describedby="helpId"
-                                placeholder="" readonly/>
-                        <div class="cont_buttons mt-5">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar </button>
-                            <button type="submit" class="btn btn-danger">Eliminar</button>
-                        </div>
-                    </form>
-                    
+                    Usted va a a eliminar el elemento <span id="idEliminar"></span>
+                    <input type="hidden" id="idEliminarModal">
                 </div>
-               
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-danger" onclick="modalEliminarConfirmacion()">Eliminar</button>
+                </div>
             </div>
         </div>
     </div>
@@ -158,7 +145,7 @@
 
 
     <script src="JS/misc.js"></script>
-    <script src="JS/cursos.js"></script>
+    <script src="JS/usuarios.js"></script>
 </body>
 
 </html>
