@@ -1,0 +1,29 @@
+
+
+
+
+@media screen and (min-width: 500px){
+    #verMas {
+        display: none;
+        height: 30px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px){
+
+    #p1{
+        display: inline !important;
+    }
+
+    #btn-flecha{
+        background-color: #ffffff;
+        color: #ffffff;
+        border: none;
+        margin-left: 15px;
+
+    }
+
+
+}
+
